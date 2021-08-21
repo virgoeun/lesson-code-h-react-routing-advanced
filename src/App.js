@@ -6,8 +6,9 @@ import ProjectsPage from "./pages/ProjectsPage";
 import ErrorPage from "./pages/ErrorPage";
 import { Switch, Route } from "react-router-dom";
 import HomePageWithRedirect from "./pages/HomePageWithRedirect";
-
-import projectsData from './projects-data.json';     // <== IMPORT 
+import ProjectDetailsPage from "./pages/ProjectDetailsPage";
+import QueryStringExample from "./pages/QueryStringExample";
+import projectsData from './projects-data.json';
 
 function App() {
   return (
@@ -25,6 +26,18 @@ function App() {
           render={(routeProps) => {
             return <ProjectsPage {...routeProps} projects={projectsData} />;
           }}
+        />
+
+        <Route 
+          exact 
+          path="/projects/:projectId" 
+          component={ProjectDetailsPage} 
+        />
+
+        <Route 
+          exact 
+          path="/example" 
+          component={QueryStringExample} 
         />
 
         <Route component={ErrorPage} />
