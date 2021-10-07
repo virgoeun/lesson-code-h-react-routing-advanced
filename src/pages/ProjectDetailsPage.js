@@ -1,27 +1,31 @@
 // src/pages/ProjectDetailsPage.js
 
-import { Link } from "react-router-dom";
-import { useState, useEffect } from 'react';
 import projectsData from './../projects-data.json';
+import { useParams, Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 function ProjectDetailsPage(props) {
-    const [foundProject, setFoundProject] = useState(null);
+  const [foundProject, setFoundProject] = useState(null);
 
-//   const foundProject = projectsData.find((projectObj) => {
-//     return projectObj._id === props.match.params.projectId;
-//   });
+  const { projectId } = useParams();
+  // console.log('projectId', projectId);
+
+  //   const foundProject = projectsData.find((projectObj) => {
+  //     return projectObj._id === projectId;
+  //   });
   
-//   console.log(props);
 
-    useEffect(() => {
-        const project = projectsData.find((projectObj) => {
-            return projectObj._id === props.match.params.projectId;
-        })
+  useEffect(() => {
+    const project = projectsData.find((projectObj) => {
+        return projectObj._id === projectId;
+    })
 
-        if (project) setFoundProject(project);
-        
-    }, [props.match.params.projectId]);
-  
+    if (project) {
+      setFoundProject(project);
+    }
+      
+  }, [projectId]);
+
   return (
     <div>
       <h1>Project Details</h1>
