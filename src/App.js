@@ -31,13 +31,13 @@ function App() {
         <Route 
           path="/projects/:projectId" 
           element={ <ProjectDetailsPage /> } 
-        />             
+        />
 
         <Route 
           path="/example" 
           element={ <QueryStringExample /> } 
         />
-        
+
         <Route path="*" element={ <ErrorPage /> } />
       </Routes>
     </div>
