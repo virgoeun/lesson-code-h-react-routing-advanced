@@ -1,5 +1,3 @@
-// src/pages/ProjectDetailsPage.js
-
 import projectsData from './../projects-data.json';
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
@@ -10,14 +8,14 @@ function ProjectDetailsPage(props) {
   const { projectId } = useParams();
   // console.log('projectId', projectId);
 
-  //   const foundProject = projectsData.find((projectObj) => {
-  //     return projectObj._id === projectId;
+  //   const foundProject = projectsData.find((oneProject) => {
+  //     return oneProject._id === projectId;
   //   });
   
 
   useEffect(() => {
-    const project = projectsData.find((projectObj) => {
-        return projectObj._id === projectId;
+    const project = projectsData.find((oneProject) => {
+        return oneProject._id === projectId;
     })
 
     if (project) {

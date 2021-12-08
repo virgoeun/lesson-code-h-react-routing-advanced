@@ -1,22 +1,24 @@
-// src/pages/QueryStringExample.js
-
 import { useEffect } from 'react';
-import queryString from 'query-string'; // <== REMEMBER TO RUN `npm install query-string`
+import { useSearchParams } from 'react-router-dom'
 
-function QueryStringExample (props) {
+function QueryStringExample(props) {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  // Get the values from the URL query strings 
+  // Example: http://localhost:3000/example?place=Miami&destType=Apartment
+  const place = searchParams.get("place");
+  const destType = searchParams.get("destType");
   
   useEffect(() => {
-    const values = queryString.parse(props.location.search)
-    console.log(values.place);
-    console.log(values.destType);
+    console.log('place', place);
+    console.log('destType', destType);
   }, []);
 
   return (
     <div>
       <h2>Query String Example</h2>
       <p>
-        Open the console to see the logged <pre>values</pre>
-        object containing the query string content
+        Open the console to see the logged query string values
       </p>
     </div>
   )
