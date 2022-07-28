@@ -1,7 +1,7 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 
-import HomePage from "./pages/HomePage";
+// import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import ErrorPage from "./pages/ErrorPage";
