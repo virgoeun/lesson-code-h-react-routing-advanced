@@ -1,6 +1,6 @@
-import projectsData from './../projects-data.json';
-import { useParams, Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import projectsData from "./../projects-data.json";
+import { useParams, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 function ProjectDetailsPage(props) {
   const [foundProject, setFoundProject] = useState(null);
@@ -11,17 +11,15 @@ function ProjectDetailsPage(props) {
   //   const foundProject = projectsData.find((oneProject) => {
   //     return oneProject._id === projectId;
   //   });
-  
 
   useEffect(() => {
     const project = projectsData.find((oneProject) => {
-        return oneProject._id === projectId;
-    })
+      return oneProject._id === projectId;
+    });
 
     if (project) {
       setFoundProject(project);
     }
-      
   }, [projectId]);
 
   return (
@@ -38,7 +36,7 @@ function ProjectDetailsPage(props) {
         </>
       )}
     </div>
-  )
+  );
 }
 
 export default ProjectDetailsPage;
