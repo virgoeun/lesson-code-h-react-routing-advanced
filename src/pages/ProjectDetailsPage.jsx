@@ -3,14 +3,17 @@ import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 function ProjectDetailsPage(props) {
-  const [foundProject, setFoundProject] = useState(null);
+ const [foundProject, setFoundProject] = useState(null);
 
   const { projectId } = useParams();
   // console.log('projectId', projectId);
 
-  //   const foundProject = projectsData.find((oneProject) => {
-  //     return oneProject._id === projectId;
-  //   });
+  // Method .find() returns the first found matching element,
+  // or `null` if no matching element is found.
+    // const foundProject = projectsData.find((oneProject) => {
+    //  console.log("OnePr",oneProject);
+    //   return oneProject._id === projectId;
+    // });
 
   useEffect(() => {
     const project = projectsData.find((oneProject) => {
